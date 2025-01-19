@@ -258,6 +258,15 @@ defaults:
       author_profile: false
       share: true
       comments: true
+    # _deep_learning
+  - scope:
+      path: ""
+      type: deep_learning
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      comments: true
   # _publications
   # - scope:
   #     path: ""

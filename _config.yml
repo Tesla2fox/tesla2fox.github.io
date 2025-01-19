@@ -12,7 +12,7 @@ title                    : "Jiying Paliang's homepage"
 title_separator          : "-"
 name                     : &name " Paliang / Jiying"
 description              : &description "Machine Learning Expert"
-url                      : https://tesla2fox.github.io/paliangjiying.github.io/ # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : https://tesla2fox.github.io/ # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 # repository               : "academicpages/academicpages.github.io"
 

@@ -1,8 +1,8 @@
 ---
 title: "Metrics for Uplift Models"
-collection: machine_learning
+collection: deep_learning
 type: "Undergraduate course"
-permalink: /machine_learning/AUCC
+permalink: /deep_learning/pawa_test
 #venue: "Beijing"
 date: 2024-12-29
 ---

@@ -13,11 +13,59 @@ I made an important decision in Dec 2024. I will seriously organise and collect 
 
 Let's see what is going to happen in one year?   
 
-## Machine Learning skills 
+## Skills
 
+| Key Skills            | Details                  | Progress |
+| --------------------- | ------------------------ | -------- |
+| Machine Learning      | LightGBM                 | ![](https://img.shields.io/static/v1?label=000&message=100&color=ff69b4) |
+|                       | Random Forest            |   ![](https://img.shields.io/static/v1?label=000&message=100&color=ff69b4)    |
+|                       | SVM                      |          |
+|                       | LR                      |          |
+|                       |                       |          |
+|                       |                       |          |
+| Deep Learning         | CNN                      |          |
+|                       | RNN                      |          |
+|                       | Transformer              |          |
+|                       | GAN                      |          |
+|                       | PU-learning              |          |
+|                       | Reinforcement Learning   |          |
+|                       | Uplift modeling          |          |
+|                       |                          |          |
+|                       |                          |          |
+|                       |                          |          |
+|                       |                          |          |
+| DL-Frameworks         | PyTorch                  |          |
+|          		| numpy                  |          |
+|          		| pandas                  |          |
+|          		| scipy                  |          |
+|          		| scikit-learn                  |          |
+| Programming Languages | Python                   |          |
+|                       | SQL                      |          |
+|                       | Jupyter                      |          |
+| Model Optimization    | Hyperparameter Tuning    |          |
+|                       | Cross-Validation         |          |
+|                       | Model Ensembling         |          |
+|                       | Pruning                  |          |
+|                       |                          |          |
+|                       |                          |          |
+| Soft Skills           | Communication            |          |
+|                       | Cross-team Collaboration |          |
+|                       | Technical Leadership     |          |
+|                       | Problem-Solving          |          |
 
+## Projects
 
-## Coding Skills
+|                        |      |      |
+| ---------------------- | ---- | ---- |
+| LTV                    |      |      |
+| High promising         |      |      |
+| Pricing                |      |      |
+| Cost Control           |      |      |
+| Commute High Promising |      |      |
+| Feature engineering    |      |      |
+| Uplift-model           |      |      |
+|                        |      |      |
+|                        |      |      |
 
 
 

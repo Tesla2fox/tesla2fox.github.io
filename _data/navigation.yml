@@ -12,7 +12,10 @@ main:
   #   url: /talks/    
 
   - title: "machine_learning"
-    url: /machine_learning/    
+    url: /machine_learning/
+
+  - title: "deep_learning"
+    url: /deep_learning/
     
   # - title: "Portfolio"
   #   url: /portfolio/

@@ -215,6 +215,9 @@ collections:
   machine_learning:
     output: true
     permalink: /:collection/:path/
+  deep_learning:
+    output: true
+    permalink: /:collection/:path/
   # publications:
   #   output: true
   #   permalink: /:collection/:path/

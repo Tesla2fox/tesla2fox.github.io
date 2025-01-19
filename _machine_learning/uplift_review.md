@@ -13,7 +13,7 @@ date: 2024-12-29
 
 > Meta-Learner 
 
-Meta-learner based. The basic idea of this line is to use the existing prediction methods to build the estimator for the users’ responses, which may be global (i.e., S-Learner) or divided by the treatment and control groups (i.e., T-Learner) . Based on this, different two-step learners can be designed by introducing various additional operations, such as **X-Learner (Which is used to handle the inbalance dataSet. The training process is very similar with Double machine learning )** [17], R-Learner [24], and DR-Learner [4], etc.
+Meta-learner based. The basic idea of this line is to use the existing prediction methods to build the estimator for the users’ responses, which may be global (i.e., S-Learner) or divided by the treatment and control groups (i.e., T-Learner) . Based on this, different two-step learners can be designed by introducing various additional operations, such as **X-Learner (Which is used to handle the inbalance dataSet. The training process is very similar with Double machine learning )** , R-Learner (?), and DR-Learner (==?==), etc.
 
 > Tree based
 
@@ -23,13 +23,13 @@ The basic idea of this line is to use a tree structure to gradually divide the e
 
 >  Neural network based.
 
-The basic idea of this line is to take advantage of neural networks to design more complex and flexible estimators for the user’s response [16, 21, 35, 39], and most of them can be seen as improvements of the
-
-T-learner [8, 9, 30, 31].
+The basic idea of this line is to take advantage of neural networks to design more complex and flexible estimators for the user’s response, and most of them can be seen as improvements of the T-learner.
 
 ![Editing a markdown file for a talk](/images/WX20250119-194151@2x.png)
 
 
+
+## Review Table 
 
 | Name                                                         | My Thinking                                                  | Ref                                                          | Time |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
@@ -77,7 +77,9 @@ T-learner [8, 9, 30, 31].
 
 ### Entire Chain Uplift Modeling with Context-Enhanced Learning for Intelligent Marketing
 
+![Editing a markdown file for a talk](/images/WX20250119-215753@2x.png)
+
 ![Editing a markdown file for a talk](/images/WX20250119-215818@2x.png)
 
-![Editing a markdown file for a talk](/images/WX20250119-215753@2x.png)
+
 

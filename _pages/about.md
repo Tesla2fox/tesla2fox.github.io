@@ -20,8 +20,9 @@ Let's see what is going to happen in one year?
 | Machine Learning      | LightGBM                 | ![](https://img.shields.io/static/v1?label=000&message=100&color=ff69b4) |
 |                       | Random Forest            |   ![](https://img.shields.io/static/v1?label=000&message=100&color=ff69b4)    |
 |                       | SVM                      |          |
-|                       | LR                      |          |
-|                       |                       |          |
+|                       | Logistic Regression |          |
+|                       | Linear Regression |          |
+|                       | XGBoost |          |
 |                       |                       |          |
 | Deep Learning         | CNN                      |          |
 |                       | RNN                      |          |

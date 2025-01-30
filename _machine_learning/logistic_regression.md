@@ -89,6 +89,10 @@ Where:
 
 The log-loss is preferred over MSE because it ensures the probability prediction is close to the actual class labels. The log-loss penalizes large deviations in predicted probabilities more heavily than MSE.
 
+**<u>*Another reason is the MSE is difficult to get its Derivative, it is hard to solve*</u>** 
+
+***<u>==however,  in the real application of the uplift modeling , these two loss is very similar for the final mertics==</u>***
+
 1. Derive the log-loss (negative log-likelihood) function for logistic regression.
 2. Why is the log-loss function convex, and why is that useful?
 

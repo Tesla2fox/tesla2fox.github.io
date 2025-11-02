@@ -17,16 +17,15 @@ It introduces the key idea that **association is not the same as causation**. Ev
 
 The chapter then presents the **potential outcomes framework** (also known as the Rubin causal model):
 
-- Each unit (i) has $(T_i\in{0,1})$ indicating whether it receives the treatment. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
-- It has two potential outcomes: $(Y_{1i})$ if treated, and $(Y_{0i})$ if not treated. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
-- The **individual treatment effect** is $(Y_{1i} - Y_{0i})$. But since we only ever observe one of $(Y_{1i})$ or $(Y_{0i})$ for each unit, we cannot compute that directly. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
-- We therefore focus on estimands like the **average treatment effect (ATE)**: ($\mathrm{ATE} = E[Y_1 - Y_0]$), or the **average treatment effect on the treated (ATT)**: $(E[Y_1 - Y_0 \mid T=1])$. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
+- Each unit (i) has $$(T_i\in{0,1})$$ indicating whether it receives the treatment. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
+- It has two potential outcomes: $$(Y_{1i})$$ if treated, and $$(Y_{0i})$$ if not treated. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
+- The **individual treatment effect** is $$(Y_{1i} - Y_{0i})$$. But since we only ever observe one of $$(Y_{1i})$$ or $$(Y_{0i})$$ for each unit, we cannot compute that directly. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
+- We therefore focus on estimands like the **average treatment effect (ATE)**: ($$\mathrm{ATE} = E[Y_1 - Y_0]$$), or the **average treatment effect on the treated (ATT)**: $$(E[Y_1 - Y_0 \mid T=1])$$. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
 
 Next, the text explains **bias** in causal estimation:
- $E[Y \mid T=1] - E[Y \mid T=0]
- = \underbrace{E[Y_1 - Y_0 \mid T=1]}*{\text{ATT}}+ \underbrace{E[Y_0 \mid T=1] - E[Y_0 \mid T=0]}*{\text{Bias}}$
+ $$E[Y \mid T=1] - E[Y \mid T=0]
+ = \underbrace{E[Y_1 - Y_0 \mid T=1]}*{\text{ATT}}+ \underbrace{E[Y_0 \mid T=1] - E[Y_0 \mid T=0]}*{\text{Bias}}$$
  This shows that the simple difference in means between **<u>*treated and untreated combines the causal effect plus a bias term if treated and untreated differ in their counterfactual outcomes before treatment*</u>**. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html))
-
 
 
 
@@ -45,7 +44,7 @@ This chapter focuses on **randomised experiments (or randomised controlled trial
 
 Key points:
 
-- Because $((Y_0, Y_1) \perp T)$, the simple difference in observed means between the treated and control groups equals the average treatment effect (ATE). ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/02-Randomised-Experiments.html))
+- Because $$((Y_0, Y_1) \perp T)$$, the simple difference in observed means between the treated and control groups equals the average treatment effect (ATE). ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/02-Randomised-Experiments.html))
 - The chapter gives a concrete example: a study comparing online vs face-to-face instruction in a school setting, where students are randomly assigned. This illustrates how randomisation can make treated and untreated groups comparable and thus support causal claims. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/02-Randomised-Experiments.html))
 - It emphasises that while randomised experiments are ideal, they are often expensive, unethical or infeasible in many real-world contexts (e.g., you cannot randomly assign people to smoke or not, or randomly set minimum wages). ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/02-Randomised-Experiments.html))
 - It introduces the notion of the **assignment mechanism** – understanding how units are assigned to treatment is critical to causal inference, even when randomisation is not possible. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/02-Randomised-Experiments.html))
@@ -74,7 +73,7 @@ Confounding bias occurs when a variable (C) affects both the treatment (T) and t
 **Characteristics:**
 
 * The bias arises from a common cause (C \to T) and (C \to Y).
-* If (C) is not adjusted for, the observed effect $(E[Y \mid T=1] - E[Y \mid T=0])$ is biased.
+* If (C) is not adjusted for, the observed effect $$(E[Y \mid T=1] - E[Y \mid T=0])$$ is biased.
 * Can be reduced or removed by controlling for confounders, randomization, or using instrumental variables.
 
 **Example:**
@@ -89,7 +88,7 @@ Selection bias occurs when you condition on a **common effect (collider)** (S) t
 
 **Characteristics:**
 
-* Unlike confounding, the bias arises from a common effect$ (T \to S \leftarrow Y)$.
+* Unlike confounding, the bias arises from a common effect$$ (T \to S \leftarrow Y)$$.
 * Conditioning on or selecting based on (S) opens a previously blocked path, introducing bias.
 * Controlling the wrong variable (a collider) can actually create bias instead of removing it.
 
@@ -137,11 +136,11 @@ If you like, I can also extract the **code examples**, **graphical diagrams**, a
 ### 1. What is the Propensity Score?
 
 - The propensity score is defined as the probability of receiving the treatment given observed covariates:
-  $e(X) = P(T = 1 \mid X)$ ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
+  $$e(X) = P(T = 1 \mid X)$$ ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
 - The key insight: instead of controlling for the full vector (X) of covariates to achieve
-  $(Y_1, Y_0) \perp T \mid X$
+  $$(Y_1, Y_0) \perp T \mid X$$
    it is **sufficient** to condition on the propensity score:
-   $(Y_1, Y_0) \perp T \mid e(X)$ ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
+   $$(Y_1, Y_0) \perp T \mid e(X)$$ ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
 - Intuitively, if two units have the same (e(X)), then which one receives treatment is (under the assumptions) “as good as random”—so balancing on the propensity score is enough to remove bias from observed confounders. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
 
 ------
@@ -152,7 +151,7 @@ The webpage outlines several major applications:
 
 - **Weighting (Inverse Probability of Treatment Weighting – IPTW):**
   - One can estimate the ATE by weighting each unit by the inverse of the probability of the treatment they actually received:
-     $w_i = \frac{T_i}{e(X_i)} + \frac{1 - T_i}{1 - e(X_i)}$
+     $$w_i = \frac{T_i}{e(X_i)} + \frac{1 - T_i}{1 - e(X_i)}$$
      Then compute a weighted average of the outcome. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
   - Requires the “positivity” or “overlap” assumption: no one has zero or one probability of treatment (i.e., (e(X)) strictly between 0 and 1) so weights don’t explode. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
 - **Matching on the Propensity Score:**
@@ -166,10 +165,10 @@ The webpage outlines several major applications:
 
 ### 3. Practical Estimation and Diagnostics
 
-- In practice, the true $(e(X))$ is unknown; we estimate $(\hat e(X))$ typically via logistic regression (or other machine‑learning tools) using observed (X). ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
-- After estimating $(\hat e(X))$, diagnostics are essential:
+- In practice, the true $$(e(X))$$ is unknown; we estimate $$(\hat e(X))$$ typically via logistic regression (or other machine‑learning tools) using observed (X). ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
+- After estimating $$(\hat e(X))$$, diagnostics are essential:
   - **Balance check:** Examine whether treated and control units are similar in (X) within strata or weights of (e(X)). ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
-  - **Overlap check (positivity):** Check distributions of ($\hat e(X)$) for treated and untreated; if there’s little to no overlap (e.g., treated always high (e(X)) and untreated always low), then causal estimation is weak. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
+  - **Overlap check (positivity):** Check distributions of ($$\hat e(X)$$) for treated and untreated; if there’s little to no overlap (e.g., treated always high (e(X)) and untreated always low), then causal estimation is weak. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
 - Estimation of standard errors: when using IPTW, standard errors based on simple weighted averages assume known (e(X)); if (\hat e(X)) is estimated, one should use bootstrapping (or other variance‑adjusted methods) to account for propensity score estimation error. ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html))
 
 ------
@@ -201,11 +200,11 @@ The webpage outlines several major applications:
   2. A model for the **outcome regression** (expected outcome given treatment and covariates)
 - The doubly robust (DR) estimator **combines** these two models in one formula so that it remains **consistent (unbiased in large samples)** if *either one* of the two models is correctly specified (though not necessarily both). ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/12-Doubly-Robust-Estimation.html?utm_source=chatgpt.com))
 - In formula form (simplified):
-  $\hat{ATE} = \frac{1}{N} \sum_{i=1}^N \Big( \frac{T_i (Y_i - \hat\mu_1(X_i))}{\hat P(X_i)} + \hat\mu_1(X_i) \Big) ;-; \frac{1}{N} \sum_{i=1}^N \Big( \frac{(1-T_i)(Y_i - \hat\mu_0(X_i))}{1 - \hat P(X_i)} + \hat\mu_0(X_i)\Big)$
+  $$\hat{ATE} = \frac{1}{N} \sum_{i=1}^N \Big( \frac{T_i (Y_i - \hat\mu_1(X_i))}{\hat P(X_i)} + \hat\mu_1(X_i) \Big) ;-; \frac{1}{N} \sum_{i=1}^N \Big( \frac{(1-T_i)(Y_i - \hat\mu_0(X_i))}{1 - \hat P(X_i)} + \hat\mu_0(X_i)\Big)$$
    where:
-  - $\hat P(X_i)$ = estimated propensity score
-  - $\hat\mu_1(X_i) = \hat E(Y|T=1, X_i)$ = estimated outcome model under treatment
-  - $\hat\mu_0(X_i) = \hat E(Y|T=0, X_i)$ = estimated outcome model under control ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/12-Doubly-Robust-Estimation.html?utm_source=chatgpt.com))
+  - $$\hat P(X_i)$$ = estimated propensity score
+  - $$\hat\mu_1(X_i) = \hat E(Y|T=1, X_i)$$ = estimated outcome model under treatment
+  - $$\hat\mu_0(X_i) = \hat E(Y|T=0, X_i)$$ = estimated outcome model under control ([matheusfacure.github.io](https://matheusfacure.github.io/python-causality-handbook/12-Doubly-Robust-Estimation.html?utm_source=chatgpt.com))
 - The name “doubly robust” comes from the “either/or” nature: as long as **either** the propensity model **or** the outcome regression model is correct, the estimator converges to the true effect.
 
 ------
@@ -232,8 +231,8 @@ The webpage outlines several major applications:
 ### 4. Practical usage / intuition
 
 - In practice you would:
-  1. Estimate the propensity score model $\hat P(X) = P(T=1|X)$ ) (e.g., logistic regression)
-  2. Estimate the outcome regression models for treated and control: $\hat\mu_1(X) \approx E[Y|T=1, X] $) and $ \hat\mu_0(X) \approx E[Y|T=0, X] $ (e.g., linear regression, machine learning)
+  1. Estimate the propensity score model $$\hat P(X) = P(T=1|X)$$ ) (e.g., logistic regression)
+  2. Estimate the outcome regression models for treated and control: $$\hat\mu_1(X) \approx E[Y|T=1, X] $$) and $$ \hat\mu_0(X) \approx E[Y|T=0, X] $$ (e.g., linear regression, machine learning)
   3. Plug into the DR formula above to compute the ATE (or whichever estimand you care about)
   4. Check diagnostics: balance on (X), overlap of propensity scores, distribution of weights, sensitivity if one model is plausibly wrong
 - The intuition: You are using two “paths” to adjust for confounding — a **model for selection into treatment** + a **model for the outcome given covariates** — and if at least one path is credible, you get a good estimate.

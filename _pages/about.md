@@ -69,6 +69,11 @@ Let's see what is going to happen in one year?
 |                        |      |      |
 
 
+Work Experience
+======
+
+* Alibaba Group — Algorithm Engineer Expert 2022-present
+
 
 Education
 ======

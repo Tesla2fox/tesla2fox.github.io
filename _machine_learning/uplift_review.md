@@ -9,11 +9,40 @@ date: 2025-01-19
 
 
 
+
+
+In causal inference, we can divide the features ( X ) into four types:
+
+1. **Only related to treatment ( T )** — these features influence whether a unit receives treatment, but not the outcome. If we include too many of them, our causal effect estimate can become biased.
+2. **Only related to outcome ( Y )** — these features don’t affect treatment assignment, but they help predict the outcome more accurately.
+3. **Confounders**, which affect both ( T ) and ( Y ) — these are the key variables we must control for to remove bias.
+4. **Irrelevant variables**, which affect neither ( T ) nor ( Y ) — they don’t change bias, but they make the model less efficient and harder to train.
+
+Under the **unconfoundedness assumption**, if we can correctly adjust for the **propensity score**, we can obtain an unbiased estimate of the treatment effect.
+However, in real data, many features in ( X ) might be related to ( Y ) but not to ( T ). These parts don’t help causal estimation — they only add noise.
+Similarly, features that are related to ( T ) but not ( Y ) might create bias if we rely on them too much.
+
+So the key question is:
+
+> How can we automatically find the features that are truly related to both ( T ) and ( Y )?
+
+Neural networks like **DragonNet** tackle this by learning a **shared representation** — a hidden space that captures the common factors influencing both treatment and outcome.
+This allows the model to focus on the confounders — the variables that matter for causal inference — while ignoring irrelevant or noisy signals.
+As a result, the model can **reduce bias in causal effect estimation**, even though this might involve a small trade-off in predictive accuracy.
+
+
+
+
+
 ## Uplift Model Taxmony
 
 > Meta-Learner 
 
 Meta-learner based. The basic idea of this line is to use the existing prediction methods to build the estimator for the users’ responses, which may be global (i.e., S-Learner) or divided by the treatment and control groups (i.e., T-Learner) . Based on this, different two-step learners can be designed by introducing various additional operations, such as **X-Learner (Which is used to handle the inbalance dataSet. ~~The training process is very similar with Double machine learning~~ )** , R-Learner (?), and DR-Learner (==?==), etc.
+
+
+
+
 
 > Tree based
 
@@ -35,7 +64,7 @@ The basic idea of this line is to take advantage of neural networks to design mo
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | ---- |
 | TARNet                                                       | Introduces a shared layer to mitigate the high variance problem caused by T-Learner. | Estimating individual treatment effect: generalization bounds and algorithms | 2017 | 1    |
 | CFRNet (CounterFactual Regression Network)                   | Adds Integral Probability Metrics (IPM) mechanism to balance the data distribution between Treatment and Control groups by calculating their distance/similarity. | Estimating individual treatment effect: generalization bounds and algorithms | 2017 | 2    |
-| DragonNet (because the dragon has three heads.)              | Adds propensity score estimator $$g(⋅)$$ to incorporate propensity score weighting into the loss function, mitigating selection bias. Cal the crossentropy with the treatment. | Adapting Neural Networks for the Estimation of Treatment Effects | 2019 | 3    |
+| DragonNet (because the dragon has three heads.)              | Adds propensity score estimator $$g(⋅)$$ to incorporate propensity score weighting into the loss function, mitigating selection bias. Cal the crossentropy with the treatment.  **Think it based on the X_feature, unconfoundedness assumption ** | Adapting Neural Networks for the Estimation of Treatment Effects | 2019 | 3    |
 | EUEN (Explicit Uplift Effect Network)                        | Directly learns $$τ$$, using $$u(c)+\tau$$ to represent $$u(t)$$, and performs gradient descent with T group labels for loss. Maybe can be seen as a simple version of DIPN. | Addressing Exposure Bias in Uplift Modeling for Large-scale Online Advertising | 2021 | 4    |
 | DIPN(deep-isotonic-promotion-network)                        | Predicts monotonic increases with the treatment increasing   | A framework for massive scale personalized promotion         | 2021 | 5    |
 | FlexTENet (flexible Treatment effect net )                   | 1. Ideas from multi-task learning (domain adaptation) 2.Merges **multiple shared layers** between T and C heads to alleviate the high variance issue. | On Inductive Biases for Heterogeneous Treatment Effect Estimation | 2021 | 6    |
@@ -71,6 +100,10 @@ The basic idea of this line is to take advantage of neural networks to design mo
 |                                                              |                                                              |                                                              |      |      |
 |                                                              |                                                              |                                                              |      |      |
 |                                                              |                                                              |                                                              |      |      |
+
+### 2or4. CFR-NET and dragon-Net, The mainly objective is to learn the uplift (ATE), but in some scenes, the value precesion of output (Y) is alos important, such as the   coupon scene.
+
+###  
 
 ### 4. Addressing Exposure Bias in Uplift Modeling for Large-scale Online Advertising
 
